@@ -1,0 +1,39 @@
+.content {
+   background-color:cornflowerblue;
+   grid-area: c;
+   padding: 20px;
+ }
+ .content img {
+   max-width: 1200px;
+   max-height: 100%;
+   object-fit: cover;
+   
+ }
+ 
+ .usersdata{
+   display: flex;
+ }
+ .usersdata-img {
+   margin: 0 10px 0 0;
+ }
+ 
+ .usersdata-img img{
+   width: 250px;
+   height: 200px;
+ }
+ 
+ 
+ .usersdata-dates_title{
+   font-size: 30px;
+   font-weight: bold;
+   margin: 0 0 20px 0;
+ }
+ 
+ .usersdata-dates_dates{
+   font-size: 20px;
+ }
+ .usersdata-dates_dates span {
+   display: block;
+ }
+
+ 
