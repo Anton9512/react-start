@@ -1,21 +1,22 @@
 import classes from './Nav.module.css';
+
 const Nav = () => {
    return (
       <nav className={classes.nav}>
       <div className={classes.item}>
-        Profile
+        <a href="/profile">Profile</a>
       </div>
       <div className={classes.item}>
-        Messages
+        <a href="/dialogs">Messages</a>
       </div>
       <div className={classes.item}>
-        News
+        <a>News</a>
       </div>
       <div className={classes.item}>
-        Music
+        <a>Music</a>
       </div>
       <div className={classes.item}>
-        Settings
+        <a>Settings</a>
       </div>
     </nav>
    )

@@ -1,4 +1,4 @@
-import classes from './Dialogs.module.css';
+import s from './Dialogs.module.css';
 
 const Dialogs = (props) => {
    return (

@@ -1,8 +1,4 @@
-.content {
-   background-color:cornflowerblue;
-   grid-area: c;
-   padding: 20px;
- }
+
  .content img {
    max-width: 1200px;
    max-height: 100%;
@@ -36,7 +32,7 @@
    font-size: 20px;
  }
  .userinfo__info span{
-    display: block;
+  display: block;
  }
 
  
