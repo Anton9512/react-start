@@ -1,18 +1,26 @@
 .nav{
-  background-color: rgb(233, 231, 231);
+  background-color:cornflowerblue;
   grid-area: n;
   padding: 50px 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgb(26, 23, 212);
-  border: 2px solid ;
 }
 .nav div {
   font-size: 20px;
   margin: 0 0 25px 0;
   cursor: pointer;
 }
-.nav div:hover {
-  color: rgb(21, 19, 158);
+.nav a:hover {
+  color: white;
+  transition: all 0.3s ease 0s;
+}
+.nav a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* можно написать и просто active, */
+.nav a.activeLink {  
+  color: #fff;
 }

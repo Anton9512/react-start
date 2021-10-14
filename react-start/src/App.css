@@ -19,7 +19,7 @@
 }
 
 .app-wrapper-content {
-  background-color:cornflowerblue;
+  /* background-color:cornflowerblue; */
   grid-area: c;
-  padding: 20px;
+  border: 2px solid rgb(57, 112, 184);
 }
