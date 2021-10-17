@@ -4,9 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+let postData = [
+  {id: 1, message: 'This is react.js', likesCount: 12},
+  {id: 2, message: 'Hello, how are you?', likesCount: 5},
+  {id: 3, message: 'Welcome', likesCount: 14},
+]
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App postData={postData}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
