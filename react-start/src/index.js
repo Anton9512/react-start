@@ -10,9 +10,27 @@ let postData = [
   {id: 3, message: 'Welcome', likesCount: 14},
 ]
 
+let dialogsData = [
+  {id: 1, name: 'Anton',},
+  {id: 2, name: 'Vasiliy',},
+  {id: 3, name: 'Jenya',},
+  {id: 4, name: 'Petr',},
+  {id: 5, name: 'Katya',},
+  {id: 6, name: 'Sasha',},
+]
+
+let messages = [
+  {id: 1, message: 'Hi!',},
+  {id: 2, message: 'How are you?',},
+  {id: 3, message: 'Hello!Would you like to buy our react courses?',},
+  {id: 4, message: 'Hello!!'},
+  {id: 5, message: 'LOL!',},
+  {id: 6, message: 'Bye.',},
+]
+
 ReactDOM.render(
   <React.StrictMode>
-    <App postData={postData}/>
+    <App postData={postData} dialogsData={dialogsData} messages={messages}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

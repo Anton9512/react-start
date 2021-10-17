@@ -16,7 +16,7 @@ const  App = (props) => {
         <Header/>
         <Nav/>
         <div className="app-wrapper-content">
-          <Route path="/dialogs" render={ () => <Dialogs/>}/>
+          <Route path="/dialogs" render={ () => <Dialogs dialogsData={props.dialogsData} messages={props.messages}/>}/>
           <Route path="/profile" render={ () => <Profile postData={props.postData}/>}/>
           <Route path="/news" render={ () => <News/>}/>
           <Route path="/music" render={ () => <Music/>}/>
@@ -26,7 +26,7 @@ const  App = (props) => {
     </BrowserRouter>
   );
 }
-
+// render or component -загугли в чем разница
 
 export default App;
 
