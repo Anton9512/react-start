@@ -25,7 +25,9 @@
          {id: 6, message: 'Bye.',},
        ],
    }
- }
+ };
+
+ 
 
  export default state;
 

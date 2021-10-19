@@ -1,6 +1,7 @@
 .dialogs {
    display: grid;
    grid-template-columns: 2fr 3fr;
+   grid-template-rows: 1fr 1fr;
    padding: 20px;
    font-size: 20px;
 }
@@ -13,9 +14,12 @@
    color: gold;
 }
 .messages {
-
 }
 
 .message {
 
+}
+
+.entermessage {
+   grid-column-start: 2;
 }

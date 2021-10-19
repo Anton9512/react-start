@@ -1,3 +1,11 @@
 .mypost {
    padding: 10px;
 }
+
+.mypost__btns {
+
+}
+
+.mypost__logo {
+   color: green;
+}
