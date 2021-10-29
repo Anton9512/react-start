@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2e1fa0c8-0853-4f62-89ad-db687875b552" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -85,11 +84,23 @@
       <workItem from="1634296504210" duration="282000" />
       <workItem from="1635236659769" duration="2105000" />
       <workItem from="1635490509764" duration="743000" />
+      <workItem from="1635496537450" duration="344000" />
+      <workItem from="1635496889951" duration="2151000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -108,29 +119,37 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="995" y="402" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1634296555348" />
-    <state width="1342" height="236" key="GridCell.Tab.0.bottom" timestamp="1635429037213">
+    <state x="521" y="247" width="1180" height="695" key="DiffContextDialog" timestamp="1635499059249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1342" height="236" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635429037213" />
-    <state width="1342" height="236" key="GridCell.Tab.0.center" timestamp="1635429037212">
+    <state x="521" y="247" width="1180" height="695" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635499059249" />
+    <state width="1342" height="231" key="GridCell.Tab.0.bottom" timestamp="1635499059195">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1342" height="236" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635429037212" />
-    <state width="1342" height="236" key="GridCell.Tab.0.left" timestamp="1635429037212">
+    <state width="1342" height="231" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635499059195" />
+    <state width="1342" height="231" key="GridCell.Tab.0.center" timestamp="1635499059195">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1342" height="236" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635429037212" />
-    <state width="1342" height="236" key="GridCell.Tab.0.right" timestamp="1635429037212">
+    <state width="1342" height="231" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635499059195" />
+    <state width="1342" height="231" key="GridCell.Tab.0.left" timestamp="1635499059194">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1342" height="236" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635429037212" />
-    <state x="721" y="208" key="SettingsEditor" timestamp="1635237105100">
+    <state width="1342" height="231" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635499059194" />
+    <state width="1342" height="231" key="GridCell.Tab.0.right" timestamp="1635499059195">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="721" y="208" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1635237105100" />
-    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup" timestamp="1635238730496">
+    <state width="1342" height="231" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635499059195" />
+    <state x="922" y="214" key="SettingsEditor" timestamp="1635497236896">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1635238730496" />
+    <state x="922" y="214" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1635497236896" />
+    <state x="1335" y="200" width="585" height="795" key="find.popup" timestamp="1635496774936">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1335" y="200" width="585" height="795" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1635496774936" />
+    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup" timestamp="1635497817812">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1635497817812" />
   </component>
 </project>
