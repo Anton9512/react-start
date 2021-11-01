@@ -21,13 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2e1fa0c8-0853-4f62-89ad-db687875b552" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reducer .js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +51,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile/MyPosts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\OneDrive\Рабочий стол\React-projects\react-start\src\components\Profile\MyPosts" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -99,6 +99,7 @@
       <workItem from="1635578296422" duration="1795000" />
       <workItem from="1635580116374" duration="348000" />
       <workItem from="1635580692287" duration="31000" />
+      <workItem from="1635673365171" duration="3888000" />
     </task>
     <servers />
   </component>
@@ -136,26 +137,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="521" y="247" width="1180" height="695" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635499059249" />
-    <state width="1197" height="188" key="GridCell.Tab.0.bottom" timestamp="1635580466743">
+    <state width="1330" height="199" key="GridCell.Tab.0.bottom" timestamp="1635678833787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1197" height="188" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635580466743" />
-    <state width="1197" height="188" key="GridCell.Tab.0.center" timestamp="1635580466743">
+    <state width="1330" height="199" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635678833787" />
+    <state width="1330" height="199" key="GridCell.Tab.0.center" timestamp="1635678833787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1197" height="188" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635580466743" />
-    <state width="1197" height="188" key="GridCell.Tab.0.left" timestamp="1635580466743">
+    <state width="1330" height="199" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635678833787" />
+    <state width="1330" height="199" key="GridCell.Tab.0.left" timestamp="1635678833787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1197" height="188" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635580466743" />
-    <state width="1197" height="188" key="GridCell.Tab.0.right" timestamp="1635580466743">
+    <state width="1330" height="199" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635678833787" />
+    <state width="1330" height="199" key="GridCell.Tab.0.right" timestamp="1635678833787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1197" height="188" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635580466743" />
-    <state x="803" y="165" key="SettingsEditor" timestamp="1635577452956">
+    <state width="1330" height="199" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635678833787" />
+    <state x="777" y="108" key="SettingsEditor" timestamp="1635676996432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="803" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1635577452956" />
+    <state x="777" y="108" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1635676996432" />
     <state x="1335" y="200" width="585" height="795" key="find.popup" timestamp="1635496774936">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -164,5 +165,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="834" y="314" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1635497817812" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.jsx</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
