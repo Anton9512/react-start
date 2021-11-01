@@ -13,13 +13,12 @@ const Dialogs = (props) => {
 
    let onSendMessageClick = () => {
       props.sendMessage();
-   }
+   };
 
    let onNewMessageChange = (e) => {
       let body = e.target.value;
       props.updateNewMessageBody(body)
-      //props.store.dispatch(updateNewMessageBodyCreator(body))
-   }
+   };
 
    return (
       <div className={s.dialogs}>
@@ -37,6 +36,6 @@ const Dialogs = (props) => {
          </div>
       </div>
    )
-}
+};
 
 export default Dialogs;
