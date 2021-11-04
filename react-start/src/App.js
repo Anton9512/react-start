@@ -21,6 +21,7 @@ const  App = (props) => {
           <Route path="/news" render={ () => <News/>}/>
           <Route path="/music" render={ () => <Music/>}/>
           <Route path="/settings" render={ () => <Settings/>}/>
+          <Route path="/users" render={ () => <div>users</div>}/>
         </div>
       </div>
     </BrowserRouter>
