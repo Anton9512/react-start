@@ -3,7 +3,6 @@ import Post from './Post/Post';
 import React from 'react';
 
 const MyPosts = (props) => {
-  
  let postsElements = props.postData.map((p) => {
    return <Post message={p.message} likeCount={p.likesCount}/>
  })
