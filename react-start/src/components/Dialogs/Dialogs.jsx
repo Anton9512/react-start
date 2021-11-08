@@ -3,21 +3,25 @@ import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 
-const Dialogs = (props) => {
-
-   let state = props.dialogsPage;
+class Dialogs extends React.Component {
+   constructor(props){
+      super(props)
+   };
+   render() {
+   
+   let state = this.props.dialogsPage;
 
    let dialogsElements = state.dialogsData.map((d) => <DialogItem name={d.name} key={d.id} id={d.id} />);
    let messagesElements = state.messages.map((m) => <Message message={m.message} key={m.id}/>);
    let newMessageBody = state.newMessageBody;
 
    let onSendMessageClick = () => {
-      props.sendMessage();
+      this.props.sendMessage();
    };
 
    let onNewMessageChange = (e) => {
       let body = e.target.value;
-      props.updateNewMessageBody(body)
+      this.props.updateNewMessageBody(body)
    };
 
    return (
@@ -36,6 +40,7 @@ const Dialogs = (props) => {
          </div>
       </div>
    )
-};
+   }
+}
 
 export default Dialogs;
