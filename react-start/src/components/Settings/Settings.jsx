@@ -10,7 +10,9 @@ class Settings extends React.Component {
          Settings
       </div>
    }
-}
+};
+
+export default Settings;
 
 // const Settings = () => {
 //   return (<div>
@@ -19,4 +21,3 @@ class Settings extends React.Component {
 //    )
 // }
 
-export default Settings;
