@@ -7,7 +7,7 @@ let Users = (props) => {
 
    let pages = [];
    for (let i=1; i <= pagesCount; i++) {
-      if (pages.length <= 10) {
+      if (pages.length <= 9) {
          pages.push(i);
       }
    };
@@ -24,8 +24,8 @@ let Users = (props) => {
              <div><img src={u.photos.small || userPhoto} className={styles.userPhoto} alt="" /></div>
              <div>
                 {u.followed 
-                ? <button onClick={ () => {props.unfollow(u.id)}}>Follow</button> 
-                : <button onClick={ () => {props.follow(u.id)}}>Unfollow</button>}
+                ? <button onClick={ () => {props.unfollow(u.id)}}>Unfollow</button> 
+                : <button onClick={ () => {props.follow(u.id)}}>Follow</button>}
              </div>
           </div>
           <div className={styles.secondBlock}>
