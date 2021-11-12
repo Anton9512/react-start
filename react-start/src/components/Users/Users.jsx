@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import userPhoto from '../../images/user.png';
 import styles from './Users.module.css';
 
@@ -7,7 +8,7 @@ let Users = (props) => {
 
    let pages = [];
    for (let i=1; i <= pagesCount; i++) {
-      if (pages.length <= 9) {
+      if (pages.length <= 49) {
          pages.push(i);
       }
    };
@@ -21,7 +22,11 @@ let Users = (props) => {
   {
       props.users.map( (u) => <div key={u.id}>
           <div className={styles.firstBlock}>
-             <div><img src={u.photos.small || userPhoto} className={styles.userPhoto} alt="" /></div>
+             <div>
+                <NavLink to={'/profile/' + u.id}>
+                  <img src={u.photos.small || userPhoto} className={styles.userPhoto} alt="" />
+                </NavLink>
+             </div>
              <div>
                 {u.followed 
                 ? <button onClick={ () => {props.unfollow(u.id)}}>Unfollow</button> 
