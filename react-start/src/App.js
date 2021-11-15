@@ -22,13 +22,11 @@ const  App = (props) => {
           <Route path="/news" render={ () => <News/>}/>
           <Route path="/music" render={ () => <Music/>}/>
           <Route path="/settings" render={ () => <Settings/>}/>
-  
         </div>
       </div>
     </BrowserRouter>
   );
 }
-// render or component -загугли в чем разница
 
 export default App;
 

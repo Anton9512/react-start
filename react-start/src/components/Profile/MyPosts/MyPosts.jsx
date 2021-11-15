@@ -4,7 +4,7 @@ import React from 'react';
 
 class MyPosts extends React.Component {
   constructor() {
-    super()
+    super();
   };
   render() {
     let postsElements = this.props.postData.map((p) => {

@@ -3,7 +3,6 @@ import s from'./ProfileInfo.module.css';
 import Preloader from '../../common/preloader/Preloader';
 import userPhoto from '../../../images/user.png';
 
-// Сделай добавление description к аватарке
 class ProfileInfo extends React.Component{
   constructor(props) {
     super(props)
@@ -13,7 +12,6 @@ class ProfileInfo extends React.Component{
     if (!this.props.profile ) {
       return <Preloader/>
     };
-    debugger;
     return (
         <div>
           {/* <div>
@@ -30,7 +28,7 @@ class ProfileInfo extends React.Component{
               <div className={s.userinfo__info}>
                 <span>Status: {this.props.profile.status}</span>
                 <span>About me: "{this.props.profile.aboutMe}"</span>
-                <span>Education: ВУиТ</span>
+                <div>Contacts:</div>
                 <span>Web Site: нет</span>
               </div>
             </div>

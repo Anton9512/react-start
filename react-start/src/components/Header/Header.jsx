@@ -3,6 +3,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 class Header extends React.Component {
+   constructor(props) {
+      super(props)
+   }
    render(){
       return <header className={s.header}>
       <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png"></img>
