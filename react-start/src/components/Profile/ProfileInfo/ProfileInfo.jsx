@@ -8,7 +8,6 @@ class ProfileInfo extends React.Component{
     super(props)
   }
   render() {
-    debugger;
     if (!this.props.profile ) {
       return <Preloader/>
     };
