@@ -1,6 +1,7 @@
 import MyPostsContainer from './MyPosts/MyPostsContainer';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import React from 'react';
+import { Redirect } from 'react-router';
 
 class Profile extends React.Component{
    constructor(props){
