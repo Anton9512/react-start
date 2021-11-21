@@ -22,4 +22,5 @@
   /* background-color:cornflowerblue; */
   grid-area: c;
   border: 2px solid rgb(57, 112, 184);
+  padding: 10px;
 }
