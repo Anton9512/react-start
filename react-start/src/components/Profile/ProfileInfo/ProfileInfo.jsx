@@ -18,7 +18,7 @@ class ProfileInfo extends React.Component{
             <img src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"></img>
           </div> */}
           <img className={s.userPhoto} src={this.props.profile.photos.large || userPhoto} alt="" />
-          <ProfileStatus status={'hello bro!'}/>
+          <ProfileStatus status={this.props.status} updateStatus={this.props.updateStatus}/>
         </div>
       )
   }
