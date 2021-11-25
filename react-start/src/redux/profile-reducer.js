@@ -1,5 +1,4 @@
-import { userAPI } from "../api/api";
-import { profileAPI } from "../api/api";
+import { profileAPI, userAPI } from "../api/api";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -71,7 +70,7 @@ export const getStatus= (userId) => (dispatch) =>{ // thunk для получе�
 export const updateStatus= (status) => (dispatch) =>{ // thunk для получения статуса
    profileAPI.updateStatus(status)
    .then(response => {
-      if (response.data.data.resultCode == 0) {
+      if (response.data.resultCode === 0) {
          dispatch(setStatus(status));
       };  
 });

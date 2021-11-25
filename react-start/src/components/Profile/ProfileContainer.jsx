@@ -12,9 +12,7 @@ class ProfileContainer extends React.Component{
          userId = 20748;
       }
       this.props.getUserProfile(userId);
-      //setTimeout(() => {
-         this.props.getStatus(userId)
-     // }, 1000);
+      this.props.getStatus(userId);
    };
 
    render(){
@@ -31,7 +29,6 @@ let mapStateToProps = (state) => ({
    profile: state.profilePage.profile,
    status: state.profilePage.status, // потому что мы запросили status здесь
 });
-debugger;
 export default compose(
    connect(mapStateToProps, {getUserProfile, getStatus, updateStatus}),
    withRouter,
