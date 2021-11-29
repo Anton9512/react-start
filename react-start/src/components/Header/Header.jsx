@@ -7,25 +7,12 @@ const Header = (props) => {
       <header className={s.header}>
          <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png"></img>
          <div className={s.loginBlock}>
-            {props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink>}
+            {props.isAuth 
+            ? <div>{props.login} - <button onClick={props.logout}>Log out</button></div>
+            : <NavLink to={'/login'}>Login</NavLink>}
          </div>
       </header>
    );
 }
 export default Header;
-
-// class Header extends React.Component {
-//    constructor(props) {
-//       super(props)
-//    }
-//    render(){
-//       debugger;
-//       return <header className={s.header}>
-//       <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png"></img>
-//       <div className={s.loginBlock}>
-//          {this.props.isAuth ? this.props.login : <NavLink to={'/login'}>Login</NavLink>}
-//       </div>
-//       </header>
-//    }
-// };
 
