@@ -20,11 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e1fa0c8-0853-4f62-89ad-db687875b552" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/Message.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Message/Message.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +112,7 @@
       <workItem from="1636901325912" duration="77000" />
       <workItem from="1637144854164" duration="2000" />
       <workItem from="1637312814395" duration="6000" />
+      <workItem from="1638434584157" duration="347000" />
     </task>
     <servers />
   </component>
@@ -149,22 +150,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="521" y="247" width="1180" height="695" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635499059249" />
-    <state width="1330" height="199" key="GridCell.Tab.0.bottom" timestamp="1635678833787">
+    <state width="1330" height="202" key="GridCell.Tab.0.bottom" timestamp="1638434614033">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1330" height="199" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635678833787" />
-    <state width="1330" height="199" key="GridCell.Tab.0.center" timestamp="1635678833787">
+    <state width="1330" height="202" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1638434614033" />
+    <state width="1330" height="202" key="GridCell.Tab.0.center" timestamp="1638434614033">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1330" height="199" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635678833787" />
-    <state width="1330" height="199" key="GridCell.Tab.0.left" timestamp="1635678833787">
+    <state width="1330" height="202" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1638434614033" />
+    <state width="1330" height="202" key="GridCell.Tab.0.left" timestamp="1638434614032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1330" height="199" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635678833787" />
-    <state width="1330" height="199" key="GridCell.Tab.0.right" timestamp="1635678833787">
+    <state width="1330" height="202" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1638434614032" />
+    <state width="1330" height="202" key="GridCell.Tab.0.right" timestamp="1638434614033">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1330" height="199" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635678833787" />
+    <state width="1330" height="202" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1638434614033" />
     <state x="777" y="108" key="SettingsEditor" timestamp="1636297580426">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
