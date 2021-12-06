@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e1fa0c8-0853-4f62-89ad-db687875b552" name="Default Changelist" comment="" />
+    <list default="true" id="2e1fa0c8-0853-4f62-89ad-db687875b552" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatusWithHooks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatusWithHooks.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,8 +54,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile/ProfileInfo" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -138,6 +145,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="880" y="413" key="#ESLint" timestamp="1638775376909">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="880" y="413" key="#ESLint/0.0.1920.1040@0.0.1920.1040" timestamp="1638775376909" />
     <state x="995" y="402" key="#Notifications" timestamp="1634296555348">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -146,22 +157,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="521" y="247" width="1180" height="695" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635499059249" />
-    <state width="1330" height="202" key="GridCell.Tab.0.bottom" timestamp="1638434614033">
+    <state width="1330" height="198" key="GridCell.Tab.0.bottom" timestamp="1638775380825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1330" height="202" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1638434614033" />
-    <state width="1330" height="202" key="GridCell.Tab.0.center" timestamp="1638434614033">
+    <state width="1330" height="198" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1638775380825" />
+    <state width="1330" height="198" key="GridCell.Tab.0.center" timestamp="1638775380825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1330" height="202" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1638434614033" />
-    <state width="1330" height="202" key="GridCell.Tab.0.left" timestamp="1638434614032">
+    <state width="1330" height="198" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1638775380825" />
+    <state width="1330" height="198" key="GridCell.Tab.0.left" timestamp="1638775380825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1330" height="202" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1638434614032" />
-    <state width="1330" height="202" key="GridCell.Tab.0.right" timestamp="1638434614033">
+    <state width="1330" height="198" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1638775380825" />
+    <state width="1330" height="198" key="GridCell.Tab.0.right" timestamp="1638775380825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1330" height="202" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1638434614033" />
+    <state width="1330" height="198" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1638775380825" />
     <state x="777" y="108" key="SettingsEditor" timestamp="1638532795619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -170,10 +181,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1335" y="200" width="585" height="795" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1635496774936" />
-    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup" timestamp="1638701190477">
+    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup" timestamp="1638775722923">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1638701190477" />
+    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1638775722923" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
