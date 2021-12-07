@@ -2,7 +2,6 @@ import React from 'react';
 import s from'./ProfileInfo.module.css';
 import Preloader from '../../common/preloader/Preloader';
 import userPhoto from '../../../images/user.png';
-import ProfileStatus from './ProfileStatus';
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 class ProfileInfo extends React.Component{
