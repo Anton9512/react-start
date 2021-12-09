@@ -8,9 +8,6 @@ import { Textarea } from '../../common/FormsControls/FormsControls';
 const maxLength10 = maxLengthCreator(10);
 
 class MyPosts extends React.Component {
-  constructor() {
-    super();
-  };
   render() {
     let postsElements = this.props.postData.map((p) => {
       return <Post message={p.message} likeCount={p.likesCount}/>

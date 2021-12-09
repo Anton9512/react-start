@@ -6,7 +6,7 @@ const SET_STATUS = 'SET-STATUS'
 
 let initialState = {
    postData: [
-      {id: 1, message: 'This is react.js', likesCount: 12},
+      {id: 1, message: 'React', likesCount: 12},
       {id: 2, message: 'Hello, how are you?', likesCount: 5},
       {id: 3, message: 'Welcome', likesCount: 14},
       ],
@@ -52,14 +52,14 @@ export const getUserProfile = (userId) => (dispatch) =>{
 });
 };
 
-export const getStatus= (userId) => (dispatch) =>{ // thunk для получения статуса
+export const getStatus= (userId) => (dispatch) =>{
    profileAPI.getStatus(userId)
    .then(response => {
       dispatch(setStatus(response.data));
 });
 };
 
-export const updateStatus= (status) => (dispatch) =>{ // thunk для получения статуса
+export const updateStatus= (status) => (dispatch) =>{
    profileAPI.updateStatus(status)
    .then(response => {
       if (response.data.resultCode === 0) {
