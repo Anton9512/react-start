@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e1fa0c8-0853-4f62-89ad-db687875b552" name="Default Changelist" comment="" />
+    <list default="true" id="2e1fa0c8-0853-4f62-89ad-db687875b552" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,14 +66,14 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ADMIN\OneDrive\Рабочий стол\React-projects\react-start\src\components\common\Paginator" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ADMIN\OneDrive\Рабочий стол\React-projects\react-start\src\components\Users" />
       <recent name="C:\Users\ADMIN\OneDrive\Рабочий стол\React-projects\react-start\src\redux" />
       <recent name="C:\Users\ADMIN\OneDrive\Рабочий стол\React-projects\react-start\src\components\Profile\ProfileInfo" />
       <recent name="C:\Users\ADMIN\OneDrive\Рабочий стол\React-projects\react-start\src\components\Profile\MyPosts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\OneDrive\Рабочий стол\React-projects\react-start\src\components\common\Paginator" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.after deleted length shouldn`t be changed">
