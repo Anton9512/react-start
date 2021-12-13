@@ -53,3 +53,4 @@ it('after deleted length shouldn`t be changed', () => {
    // 3. expectation
    expect( newState.postData.length).toBe(3);
 });
+

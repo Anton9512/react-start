@@ -1,7 +1,21 @@
-.selectedPage {
-    font-weight: bold;
-}
-
 .pageBlock {
     cursor: pointer;
+    margin: 0 0 15px 0;
+    display: flex;
+}
+
+.pageBlock button {
+    font-size: 18px;
+    margin: 0 3px;
+}
+
+.pageNumber span {
+    padding: 2px;
+    font-size: 18px;
+    border: 1px solid grey;
+}
+
+.pageNumber .selectedPage {
+    font-weight: bold;
+    border-color: black;
 }
