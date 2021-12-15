@@ -21,10 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2e1fa0c8-0853-4f62-89ad-db687875b552" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,6 +182,8 @@
       <workItem from="1638434584157" duration="347000" />
       <workItem from="1638532682488" duration="113000" />
       <workItem from="1639384361827" duration="8832000" />
+      <workItem from="1639469298524" duration="1000" />
+      <workItem from="1639471134740" duration="5416000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring">
       <created>1639234136995</created>
@@ -237,22 +237,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="521" y="247" width="1180" height="695" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1639392327420" />
-    <state width="1376" height="213" key="GridCell.Tab.0.bottom" timestamp="1639391934972">
+    <state width="1376" height="214" key="GridCell.Tab.0.bottom" timestamp="1639555664240">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1376" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1639391934972" />
-    <state width="1376" height="213" key="GridCell.Tab.0.center" timestamp="1639391934972">
+    <state width="1376" height="214" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1639555664240" />
+    <state width="1376" height="214" key="GridCell.Tab.0.center" timestamp="1639555664240">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1376" height="213" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1639391934972" />
-    <state width="1376" height="213" key="GridCell.Tab.0.left" timestamp="1639391934972">
+    <state width="1376" height="214" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1639555664240" />
+    <state width="1376" height="214" key="GridCell.Tab.0.left" timestamp="1639555664240">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1376" height="213" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1639391934972" />
-    <state width="1376" height="213" key="GridCell.Tab.0.right" timestamp="1639391934972">
+    <state width="1376" height="214" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1639555664240" />
+    <state width="1376" height="214" key="GridCell.Tab.0.right" timestamp="1639555664240">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1376" height="213" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1639391934972" />
+    <state width="1376" height="214" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1639555664240" />
     <state width="1330" height="234" key="GridCell.Tab.1.bottom" timestamp="1639384238679">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -313,9 +313,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="65" y="585" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1639386767367" />
-    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup" timestamp="1639385820459">
+    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup" timestamp="1639558209955">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1639385820459" />
+    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1639558209955" />
   </component>
 </project>
