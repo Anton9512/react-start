@@ -20,9 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e1fa0c8-0853-4f62-89ad-db687875b552" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Music/Music.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Music/Music.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-selectors.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,14 +75,14 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ADMIN\OneDrive\Рабочий стол\React-projects\react-start\src\components\common\Paginator" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ADMIN\OneDrive\Рабочий стол\React-projects\react-start\src\components\Users" />
       <recent name="C:\Users\ADMIN\OneDrive\Рабочий стол\React-projects\react-start\src\redux" />
       <recent name="C:\Users\ADMIN\OneDrive\Рабочий стол\React-projects\react-start\src\components\Profile\ProfileInfo" />
       <recent name="C:\Users\ADMIN\OneDrive\Рабочий стол\React-projects\react-start\src\components\Profile\MyPosts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\OneDrive\Рабочий стол\React-projects\react-start\src\components\common\Paginator" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.after deleted length shouldn`t be changed">
@@ -104,30 +112,24 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="length of posts should be incremented" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
       <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/redux/profile-reducer.test.js" />
-      <test-names>
-        <test-name value="length of posts should be incremented" />
-      </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="message of new post should be correct" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
       <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/redux/profile-reducer.test.js" />
-      <test-names>
-        <test-name value="message of new post should be correct" />
-      </test-names>
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -143,10 +145,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.deploy" />
+        <item itemvalue="npm.build" />
         <item itemvalue="Jest.after deleted length shouldn`t be changed" />
         <item itemvalue="Jest.after deleted length of messages should be decremented" />
-        <item itemvalue="Jest.message of new post should be correct" />
-        <item itemvalue="Jest.length of posts should be incremented" />
       </list>
     </recent_temporary>
   </component>
@@ -184,6 +186,13 @@
       <workItem from="1639384361827" duration="8832000" />
       <workItem from="1639469298524" duration="1000" />
       <workItem from="1639471134740" duration="5416000" />
+      <workItem from="1639646898315" duration="13000" />
+      <workItem from="1639647038006" duration="462000" />
+      <workItem from="1639647602347" duration="4556000" />
+      <workItem from="1639653121469" duration="1722000" />
+      <workItem from="1639659740843" duration="1755000" />
+      <workItem from="1639731115893" duration="5000" />
+      <workItem from="1639731857684" duration="6644000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring">
       <created>1639234136995</created>
@@ -237,22 +246,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="521" y="247" width="1180" height="695" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1639392327420" />
-    <state width="1376" height="214" key="GridCell.Tab.0.bottom" timestamp="1639555664240">
+    <state width="1376" height="234" key="GridCell.Tab.0.bottom" timestamp="1639732338893">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1376" height="214" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1639555664240" />
-    <state width="1376" height="214" key="GridCell.Tab.0.center" timestamp="1639555664240">
+    <state width="1376" height="234" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1639732338893" />
+    <state width="1376" height="234" key="GridCell.Tab.0.center" timestamp="1639732338892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1376" height="214" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1639555664240" />
-    <state width="1376" height="214" key="GridCell.Tab.0.left" timestamp="1639555664240">
+    <state width="1376" height="234" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1639732338892" />
+    <state width="1376" height="234" key="GridCell.Tab.0.left" timestamp="1639732338892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1376" height="214" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1639555664240" />
-    <state width="1376" height="214" key="GridCell.Tab.0.right" timestamp="1639555664240">
+    <state width="1376" height="234" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1639732338892" />
+    <state width="1376" height="234" key="GridCell.Tab.0.right" timestamp="1639732338892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1376" height="214" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1639555664240" />
+    <state width="1376" height="234" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1639732338892" />
     <state width="1330" height="234" key="GridCell.Tab.1.bottom" timestamp="1639384238679">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -313,9 +322,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="65" y="585" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1639386767367" />
-    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup" timestamp="1639558209955">
+    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup" timestamp="1639651618636">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1639558209955" />
+    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1639651618636" />
   </component>
 </project>

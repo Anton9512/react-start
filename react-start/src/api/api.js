@@ -3,13 +3,14 @@ import * as axios from 'axios';
 const instance = axios.create({
    withCredentials: true,
    baseURL: 'https://social-network.samuraijs.com/api/1.0/',
-   headers: {"API-KEY": "5348802f-aed7-4188-aeac-0ef9e78c35db"}
+   headers: {"API-KEY": "89fdcc6c-77c8-4e43-902f-b341c40625bf"}
 })
 
 
 export const userAPI = {
    getUsers (currentPage, pageSize) {
-      return instance.get(`users?page=${currentPage}&conunt=${pageSize}`)
+
+      return instance.get(`users?page=${currentPage}&count=${pageSize}`)
          .then (response => {
             return response.data;
          })
@@ -22,18 +23,25 @@ export const userAPI = {
    },
    getProfile (userId) {
          // Obsolete method. Please, use profileAPI obj.
-      return profileAPI.getProfile(userId);   
+      return profileAPI.getProfile(userId);
    },
 };
 export const profileAPI = {
    getProfile (userId) {
-      return instance.get(`profile/` + userId);   
+      return instance.get(`profile/` + userId);
    },
    getStatus(userId) {
-      return instance.get(`profile/status/` + userId);  
+      return instance.get(`profile/status/` + userId);
    },
    updateStatus(status) {
-      return instance.put(`profile/status/`, { status: status });  
+      return instance.put(`profile/status/`, { status: status });
+   },
+   savePhoto(photoFile) {
+      const formData = new FormData();
+      formData.append('image', photoFile)
+      return instance.put(`/profile/photo`, formData, { headers: {
+            'Content-Type': 'multipart/form-data'
+         }});
    },
 };
 
