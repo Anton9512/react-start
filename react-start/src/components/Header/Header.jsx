@@ -8,8 +8,8 @@ const Header = (props) => {
          <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png"></img>
          <div className={s.loginBlock}>
             {props.isAuth 
-            ? <div>{props.login} - <button onClick={props.logout}>Log out</button></div>
-            : <NavLink to={'/login'}>Login</NavLink>}
+            ? <div><button onClick={props.logout}>Log out</button></div>
+            : <NavLink to={'/login'}>LOGIN</NavLink>}
          </div>
       </header>
    );

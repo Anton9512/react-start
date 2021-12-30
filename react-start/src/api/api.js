@@ -9,7 +9,6 @@ const instance = axios.create({
 
 export const userAPI = {
    getUsers (currentPage, pageSize) {
-
       return instance.get(`users?page=${currentPage}&count=${pageSize}`)
          .then (response => {
             return response.data;
@@ -44,7 +43,7 @@ export const profileAPI = {
          }});
    },
    saveProfile(profile) {
-      return instance.put('/profile', profile)
+      return instance.put('profile', profile)
    }
 };
 
@@ -62,7 +61,7 @@ export const authAPI = {
 
 export const securityAPI = {
   getCaptchaUrl() {
-      return instance.get('/security/get-captcha-url')
+      return instance.get('security/get-captcha-url')
   }
 };
 

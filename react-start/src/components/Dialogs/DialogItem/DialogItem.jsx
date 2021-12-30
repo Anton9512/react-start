@@ -4,9 +4,6 @@ import {NavLink} from "react-router-dom";
 
 
 class DialogItem extends React.Component {
-   constructor(props) {
-      super(props);
-   };
    render() {
       let path = '/dialogs/' + this.props.id;
       return (

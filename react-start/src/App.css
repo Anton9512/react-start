@@ -1,23 +1,23 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-.app-wrapper{
+.app-wrapper {
   overflow: hidden;
   display: grid;
-  grid-template-columns: 2fr 10fr;
-  grid-template-rows: 60px 1fr;
-  grid-template-areas: 
-  'h h'
-  'n c';
-  grid-gap: 10px;
+  grid-template-columns: 2fr 8fr;
+  grid-template-rows: 80px 1fr;
+  grid-template-areas:
+    "h h"
+    "n c";
+  /*grid-gap: 10px;*/
 }
 
 .app-wrapper-content {
   grid-area: c;
-  border: 2px solid rgb(57, 112, 184);
+  background-color: #f7f7f7;
   padding: 10px;
+  border-left: 1px solid rgb(197, 197, 197);
 }

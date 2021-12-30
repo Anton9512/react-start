@@ -4,7 +4,7 @@ import {Field} from "redux-form";
 import {required} from "../../../utils/validators/validators";
 
 
-const FormControl = ({input, meta: {touched, error}, children,}) => {
+const FormControl = ({meta: {touched, error}, children,}) => {
     const hasError = touched && error;
     return (
         <div className={styles.formControl + ' ' + (hasError ? styles.error : '')}>
