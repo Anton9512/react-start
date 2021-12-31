@@ -1,7 +1,5 @@
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 .app-wrapper {
@@ -12,7 +10,6 @@
   grid-template-areas:
     "h h"
     "n c";
-  /*grid-gap: 10px;*/
 }
 
 .app-wrapper-content {
@@ -20,4 +17,5 @@
   background-color: #f7f7f7;
   padding: 10px;
   border-left: 1px solid rgb(197, 197, 197);
+  height: 100vh;
 }

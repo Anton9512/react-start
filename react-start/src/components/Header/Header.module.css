@@ -5,10 +5,18 @@ header {
 }
 
 .header img {
-    margin-left: 50px;
-    width: 50px;
+    display: inline-block;
+    margin: 15px 0 0 110px;
+    width: 80px;
     height: 50px;
+    transition: 0.25s;
+
 }
+.header img:hover   {
+
+
+}
+
 
 .loginBlock {
     float: right;
@@ -17,21 +25,20 @@ header {
 
 .loginBlock a {
     display: block;
-    width: 100px;
-    height: 35px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    width: 100px;
+    height: 35px;
     background: #262c37;
     margin: 20px 10px 0 0;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.4);
     font-size: 24px;
-    transition: 0.5s;
+    transition: 0.25s;
     cursor: pointer;
 }
 .loginBlock a:hover {
-    /*color: #61dafb;*/
     color: #fff;
 }
 
@@ -53,7 +60,6 @@ header {
 }
 
 .loginBlock button:hover {
-    /*color: #61dafb;*/
     color: #fff;
 }
 

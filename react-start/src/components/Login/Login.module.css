@@ -1,0 +1,66 @@
+.login {
+    margin: 20px 0 0 0;
+}
+
+h1 {
+    color: #607d8b;
+    font-weight: 600;
+    font-size: 24px;
+    text-transform: uppercase;
+    border-bottom: 4px solid #61dafb;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+h1,
+.formContent {
+    margin-left: 100px;
+}
+
+.email,
+.checkbox,
+.password,
+.loginBtn {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+}
+
+.checkbox {
+    display: flex;
+    border: none;
+    padding: 0;
+}
+
+.checkbox span {
+    margin: 0 0 0 10px;
+}
+
+.loginBtn {
+    font-size: 20px;
+    padding: 10px 30px;
+    transition: 0.25s;
+}
+.loginBtn:hover {
+    color: #fff;
+    background: #61dafb;
+    border: 1px solid #61dafb;
+}
+
+p {
+    font-size: 18px;
+    display: inline-block;
+    color: #607db8;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+p a {
+    font-weight: 600;
+    color: #61dafb;
+}

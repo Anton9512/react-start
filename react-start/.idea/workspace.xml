@@ -21,23 +21,23 @@
   <component name="ChangeListManager">
     <list default="true" id="2e1fa0c8-0853-4f62-89ad-db687875b552" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../react-social-network" beforeDir="false" afterPath="$PROJECT_DIR$/../react-social-network" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_12_2021_13_19__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_12_2021_13_19__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_12_2021_14_20__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_12_2021_14_20__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_12_2021_14_35__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_12_2021_14_35__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Nav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar/Nav.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Nav.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormsControls/FormsControls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/icons/1486348532-music-play-pause-control-go-arrow_80458.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/icons/bing_icon-icons.com_65575.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/icons/messages.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/icons/music.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/icons/news.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/icons/profile.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/icons/settings.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/icons/users.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +221,8 @@
       <workItem from="1640859092686" duration="5000" />
       <workItem from="1640862343891" duration="497000" />
       <workItem from="1640863144409" duration="2228000" />
-      <workItem from="1640865404359" duration="3519000" />
+      <workItem from="1640865404359" duration="4008000" />
+      <workItem from="1640947663019" duration="9792000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring">
       <created>1639234136995</created>
@@ -291,22 +292,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="521" y="247" width="1180" height="695" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1639392327420" />
-    <state width="1376" height="189" key="GridCell.Tab.0.bottom" timestamp="1640865441256">
+    <state width="1376" height="189" key="GridCell.Tab.0.bottom" timestamp="1640947870766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1376" height="189" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1640865441256" />
-    <state width="1376" height="189" key="GridCell.Tab.0.center" timestamp="1640865441256">
+    <state width="1376" height="189" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1640947870766" />
+    <state width="1376" height="189" key="GridCell.Tab.0.center" timestamp="1640947870766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1376" height="189" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1640865441256" />
-    <state width="1376" height="189" key="GridCell.Tab.0.left" timestamp="1640865441255">
+    <state width="1376" height="189" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1640947870766" />
+    <state width="1376" height="189" key="GridCell.Tab.0.left" timestamp="1640947870765">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1376" height="189" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1640865441255" />
-    <state width="1376" height="189" key="GridCell.Tab.0.right" timestamp="1640865441256">
+    <state width="1376" height="189" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1640947870765" />
+    <state width="1376" height="189" key="GridCell.Tab.0.right" timestamp="1640947870766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1376" height="189" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1640865441256" />
+    <state width="1376" height="189" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1640947870766" />
     <state width="1330" height="234" key="GridCell.Tab.1.bottom" timestamp="1639384238679">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
