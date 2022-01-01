@@ -37,11 +37,22 @@
    font-size: 26px;
  }
  .userPhoto {
-   width: 300px;
-   height: 300px;
+   width: 415px;
+   height: 415px;
  }
 
  .contact {
+     font-weight: 400;
      padding-left: 10px;
  }
- 
+
+ .profile {
+     display: flex;
+     /*border: 1px solid rgb(197, 197, 197);*/
+     width: 40vw;
+ }
+
+
+ .profileDataBlock {
+     margin: 0 0 0 15px;
+ }
