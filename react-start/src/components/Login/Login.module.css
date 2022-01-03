@@ -7,7 +7,7 @@ h1 {
     font-weight: 600;
     font-size: 24px;
     text-transform: uppercase;
-    border-bottom: 4px solid #61dafb;
+    border-bottom: 4px solid #3970b8;
     display: inline-block;
     letter-spacing: 1px;
 }
@@ -20,7 +20,7 @@ h1,
 .checkbox,
 .password,
 .loginBtn {
-    margin-bottom: 20px;
+    margin-top: 15px;
     padding: 10px 20px;
     outline: none;
     font-weight: 400;
@@ -29,6 +29,9 @@ h1,
     letter-spacing: 1px;
     color: #607d8b;
     background: transparent;
+}
+.email {
+    margin-top: 0;
 }
 
 .checkbox {
@@ -45,11 +48,13 @@ h1,
     font-size: 20px;
     padding: 10px 30px;
     transition: 0.25s;
+    margin-bottom: 20px;
 }
 .loginBtn:hover {
     color: #fff;
-    background: #61dafb;
-    border: 1px solid #61dafb;
+    background: #3970b8;
+    /*background: #61dafb;*/
+    border: 1px solid #3970b8;
 }
 
 p {
@@ -62,5 +67,5 @@ p {
 
 p a {
     font-weight: 600;
-    color: #61dafb;
+    color: #3970b8;
 }

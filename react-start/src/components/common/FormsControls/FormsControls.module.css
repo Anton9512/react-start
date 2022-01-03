@@ -2,10 +2,11 @@
 .formControl.error input,
 .formControl.error textarea
 {
-   border: 2px solid red;
+  border: 2px solid red;
 }
 .formControl.error span
 {
+
   color: red;
 }
 
@@ -15,3 +16,13 @@
   color: red;
   width: 150px;
 }
+
+.formControl input,
+.formControl textarea
+{
+  font-size: 13px;
+  color: #607db8;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+

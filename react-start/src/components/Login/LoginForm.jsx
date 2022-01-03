@@ -13,7 +13,6 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
          <div className={s.checkbox}><Field type={'checkbox'} name={'rememberMe'}  component={Input}/><span>remember me</span></div>
           { captchaUrl && <img src={captchaUrl} alt=""/>}
           { captchaUrl && <Field placeholder={'symbols from image'} name={'captcha'} validate={[required]}  component={Input}/>}
-
          {error && <div className={style.formSummuryError}>
             {error}
          </div>}

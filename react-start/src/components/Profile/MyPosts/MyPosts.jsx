@@ -2,7 +2,7 @@ import s from'./MyPosts.module.css';
 import Post from './Post/Post';
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
-import { maxLengthCreator, required } from '../../../utils/validators/validators';
+import { maxLengthCreator } from '../../../utils/validators/validators';
 import { Textarea } from '../../common/FormsControls/FormsControls';
 
 const maxLength10 = maxLengthCreator(10);
@@ -16,7 +16,7 @@ class MyPosts extends React.Component {
         let newPostElement = React.createRef();
       
         let onAddPost = (values) => {
-          this.props.addPost(values.newPostText)
+          this.props.addPost(values.newPostText);
         }
           return (
             <div>

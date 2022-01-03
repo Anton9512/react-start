@@ -1,58 +1,96 @@
 
- .content img {
-   max-width: 100%;
-   max-height: 100%;
-   object-fit: cover;
- }
+.content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
 
- .userdata {
-  
- }
+.userdata {
 
- .imageblock {
-   margin: 0 10px 0 0;
- }
- 
- .image {
-  width: 300px;
-  height: 250px;
- }
- 
- .userinfo{
- }
- .userinfo__title{
-   font-size: 30px;
-   font-weight: bold;
-   margin: 0 0 20px 0;
- }
- 
- .userinfo__info{
-   font-size: 20px;
- }
- .userinfo__info span{
-  display: block;
- }
+}
 
- .userName {
-   font-size: 26px;
- }
- .userPhoto {
-   width: 415px;
-   height: 415px;
- }
+.imageblock {
+    margin: 0 10px 0 0;
+}
 
- .contact {
-     font-weight: 400;
-     padding-left: 10px;
- }
+.image {
+    width: 300px;
+    height: 250px;
+}
 
- .profile {
-     display: flex;
-     /*border: 1px solid rgb(197, 197, 197);*/
-     width: 40vw;
- }
+.userinfo {
+}
+
+.userinfo__title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+
+.userinfo__info {
+    font-size: 20px;
+}
+
+.userinfo__info span {
+    display: block;
+}
+
+.userName {
+    font-size: 26px;
+}
+
+.userPhoto {
+    width: 415px;
+    height: 415px;
+}
+
+.contact {
+    font-weight: 400;
+    padding-left: 10px;
+}
+
+.profile {
+    display: flex;
+    /*border: 1px solid rgb(197, 197, 197);*/
+    width: 100%;
+    margin: 0 0 20px 0;
+}
 
 
- .profileDataBlock {
-     margin: 0 0 0 15px;
- }
+.profileDataBlock {
+    margin: 0 0 0 15px;
+}
+
+.changePhoto {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    padding: 5px 30px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+    cursor: pointer;
+}
+label:hover {
+    color: #fff;
+    background: #3970b8;
+    border: 1px solid #3970b8;
+}
+
+.changePhoto:before {
+    content: '';
+    padding: 5px 30px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+}

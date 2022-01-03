@@ -25,10 +25,11 @@
     letter-spacing: 1px;
     color: #607d8b;
     background: transparent;
+    cursor: pointer;
 }
 
 .profileDataForItem button:hover {
     color: #fff;
-    background: #61dafb;
-    border: 1px solid #61dafb;
+    background: #3970b8;
+    border: 1px solid #3970b8;
 }

@@ -31,7 +31,11 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
         <div className={s.profile}>
             <div className={s.profileImageBlock}>
                 <img className={s.userPhoto} src={profile.photos.large || userPhoto} alt=""/>
-                <div>{isOwner && <input type={'file'} onChange={onMainPhotoSelected}/>}</div>
+                <div>{isOwner &&
+                <label>
+                    <input className={s.changePhoto} type={'file'} onChange={onMainPhotoSelected}/>
+                    download image
+                </label>}</div>
             </div>
             <div className={s.profileDataBlock}>
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus} isOwner={isOwner}/>

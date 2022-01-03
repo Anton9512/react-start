@@ -1,0 +1,57 @@
+Index: src/components/Profile/Profile.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import MyPostsContainer from './MyPosts/MyPostsContainer';\r\nimport ProfileInfo from './ProfileInfo/ProfileInfo';\r\nimport React from 'react';\r\n\r\nfunction Profile(props) {\r\n    return (\r\n        <div>\r\n            <ProfileInfo isOwner={props.isOwner} profile={props.profile} status={props.status}\r\n                         updateStatus={props.updateStatus} savePhoto={props.savePhoto}/>\r\n            <MyPostsContainer/>\r\n        </div>\r\n    )\r\n};\r\n\r\nexport default Profile;\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/components/Profile/Profile.jsx	(revision f3fec3a391ec2b3de757c39bcfa23c26f93e0fae)
++++ src/components/Profile/Profile.jsx	(date 1641054598564)
+@@ -5,7 +5,7 @@
+ function Profile(props) {
+     return (
+         <div>
+-            <ProfileInfo isOwner={props.isOwner} profile={props.profile} status={props.status}
++            <ProfileInfo saveProfile={props.saveProfile} isOwner={props.isOwner} profile={props.profile} status={props.status}
+                          updateStatus={props.updateStatus} savePhoto={props.savePhoto}/>
+             <MyPostsContainer/>
+         </div>
+Index: src/redux/profile-reducer.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { profileAPI, userAPI } from \"../api/api\";\r\n\r\nconst ADD_POST = 'ADD-POST';\r\nconst SET_USER_PROFILE = 'SET-USER-PROFILE';\r\nconst SET_STATUS = 'SET-STATUS'\r\nconst DELETE_POST = 'DELETE_POST'\r\nconst SAVE_PHOTO_SUCCESS = 'SAVE_PHOTO_SUCCESS'\r\n\r\nlet initialState = {\r\n   postData: [\r\n      {id: 1, message: 'React', likesCount: 12},\r\n      {id: 2, message: 'Hello, how are you?', likesCount: 5},\r\n      {id: 3, message: 'Welcome', likesCount: 14},\r\n      ],\r\n   profile: null,\r\n   status: '',\r\n};\r\n\r\nconst profileReducer = (state = initialState, action) => {\r\n   switch (action.type) {\r\n      case ADD_POST:\r\n         let newPost = {\r\n            id: 5,\r\n            message: action.newPostText,\r\n            likesCount: 0\r\n         };\r\n         return  {\r\n            ...state,\r\n            postData: [...state.postData, newPost],\r\n            newPostText: '',\r\n         };\r\n      case SET_STATUS: \r\n         return {\r\n            ...state,\r\n            status: action.status,\r\n         };\r\n      case SET_USER_PROFILE: {\r\n         return {...state, profile: action.profile}\r\n      }\r\n      case DELETE_POST: {\r\n         return {...state, postData: state.postData.filter(p => p.id != action.postId)}\r\n      }\r\n      case SAVE_PHOTO_SUCCESS: {\r\n         return {...state, profile: {...state.profile, photos: action.photos}}\r\n      }\r\n      default:\r\n         return state;\r\n      \r\n   };\r\n};\r\n\r\nexport const addPostActionCreator = (newPostText) => ({type: ADD_POST, newPostText});\r\nexport const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});\r\nexport const setStatus = (status) => ({type: SET_STATUS, status});\r\nexport const deletePost = (postId) => ({type: DELETE_POST, postId});\r\nexport const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos});\r\n\r\nexport const getUserProfile = (userId) => async (dispatch) => {\r\n   let response = await userAPI.getProfile(userId)\r\n\r\n   dispatch(setUserProfile(response.data));\r\n};\r\n\r\nexport const getStatus= (userId) => async (dispatch) =>{\r\n   let response = await profileAPI.getStatus(userId)\r\n\r\n   dispatch(setStatus(response.data));\r\n};\r\n\r\nexport const updateStatus= (status) => async (dispatch) =>{\r\n   let response = await profileAPI.updateStatus(status)\r\n\r\n   if (response.data.resultCode === 0) {\r\n      dispatch(setStatus(status));\r\n   };\r\n};\r\n\r\nexport const savePhoto = (file) => async (dispatch) =>{\r\n   let response = await profileAPI.savePhoto(file)\r\n\r\n   if (response.data.resultCode === 0) {\r\n      dispatch(savePhotoSuccess(response.data.data.photos));\r\n   };\r\n};\r\n\r\nexport default profileReducer;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/redux/profile-reducer.js	(revision f3fec3a391ec2b3de757c39bcfa23c26f93e0fae)
++++ src/redux/profile-reducer.js	(date 1641054890494)
+@@ -5,6 +5,7 @@
+ const SET_STATUS = 'SET-STATUS'
+ const DELETE_POST = 'DELETE_POST'
+ const SAVE_PHOTO_SUCCESS = 'SAVE_PHOTO_SUCCESS'
++const SAVE_PROFILE_SUCCESS = 'SAVE_PROFILE_SUCCESS'
+ 
+ let initialState = {
+    postData: [
+@@ -54,6 +55,7 @@
+ export const setStatus = (status) => ({type: SET_STATUS, status});
+ export const deletePost = (postId) => ({type: DELETE_POST, postId});
+ export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos});
++export const saveProfileActionCreator = (profile) => ({type: SAVE_PROFILE_SUCCESS, profile})
+ 
+ export const getUserProfile = (userId) => async (dispatch) => {
+    let response = await userAPI.getProfile(userId)
+@@ -83,4 +85,12 @@
+    };
+ };
+ 
++export const saveProfile = (profile) => async (dispatch) => {
++   let response = await profileAPI.saveProfile(profile)
++
++   if (response.data.resultCode === 0) {
++      dispatch(getUserProfile(userId))
++   }
++}
++
+ export default profileReducer;
+\ No newline at end of file

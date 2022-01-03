@@ -9,11 +9,12 @@
     letter-spacing: 1px;
     color: #607d8b;
     background: transparent;
+    cursor: pointer;
 }
 .profileData button:hover {
     color: #fff;
-    background: #61dafb;
-    border: 1px solid #61dafb;
+    background: #3970b8;
+    border: 1px solid #3970b8;
 }
 
 .profileDataItem {
@@ -32,18 +33,18 @@
 }
 
 .status {
-    font-weight: 600    ;
-    color: #607d8b;
-    font-size: 18px;
-    margin: 0 0 15px 0;
-}
-.status b{
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     font-size: 18px;
     display: inline-block;
     color: #607d8b;
     font-weight: 300;
     letter-spacing: 1px;
+}
+.status b{
+    font-weight: 600;
+    color: #607d8b;
+    font-size: 18px;
+    margin: 0 0 15px 0;
 }
 
 .statusChanged {
