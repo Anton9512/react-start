@@ -1,37 +1,30 @@
-import s from'./MyPosts.module.css';
+import s from './MyPosts.module.css';
 import Post from './Post/Post';
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
-import { maxLengthCreator } from '../../../utils/validators/validators';
-import { Textarea } from '../../common/FormsControls/FormsControls';
+import {Textarea} from '../../common/FormsControls/FormsControls';
 
-const maxLength10 = maxLengthCreator(10);
+function MyPosts(props) {
+    let postsElements = props.postData.map((p) => {
+        return <Post key={p.id} message={p.message} likeCount={p.likesCount}/>
+    })
 
-class MyPosts extends React.Component {
-  render() {
-    let postsElements = this.props.postData.map((p) => {
-      return <Post key={p.id} message={p.message} likeCount={p.likesCount}/>
-          })
-      
-        let newPostElement = React.createRef();
-      
-        let onAddPost = (values) => {
-          this.props.addPost(values.newPostText);
-        }
-          return (
-            <div>
-              <div className={s.mypost}>
+    let onAddPost = (values) => {
+        props.addPost(values.newPostText);
+    }
+    return (
+        <div>
+            <div className={s.mypost}>
                 <div className={s.mypost__btns}>
-                  <div className={s.mypost__logo}>My post</div>
-                 <AddNewPostFormRedux onSubmit={ onAddPost }/>
+                    <div className={s.mypost__logo}>My post</div>
+                    <AddNewPostFormRedux onSubmit={onAddPost}/>
                 </div>
                 <div className={s.posts}>
-                  {postsElements}
+                    {postsElements}
                 </div>
             </div>
-            </div>
-          )
-      }
+        </div>
+    )
 };
 
 let AddNewPostForm = (props) => {
@@ -41,7 +34,7 @@ let AddNewPostForm = (props) => {
         <Field component={Textarea} name={'newPostText'} placeholder={'Post message'}/>
       </div>
       <div>
-        <button>Add post</button>
+        <button className={s.addPost}>Add post</button>
       </div>
     </form>
   )

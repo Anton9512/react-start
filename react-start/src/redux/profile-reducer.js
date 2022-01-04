@@ -13,6 +13,7 @@ let initialState = {
       {id: 2, message: 'Hello, how are you?', likesCount: 5},
       {id: 3, message: 'Welcome', likesCount: 14},
       ],
+   newPostText: '',
    profile: null,
    status: '',
 };
@@ -28,6 +29,7 @@ const profileReducer = (state = initialState, action) => {
          return  {
             ...state,
             postData: [...state.postData, newPost],
+            // postData: [...state.postData, newPost],
             newPostText: '',
          };
       case SET_STATUS: 

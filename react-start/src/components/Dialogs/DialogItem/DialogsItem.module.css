@@ -1,0 +1,9 @@
+
+.dialogsItem{
+    margin: 0 0 10px 0;
+}
+
+.dialogsItem a{
+    text-decoration: none;
+    color: #607d8b;
+}

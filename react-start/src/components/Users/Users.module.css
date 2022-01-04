@@ -1,5 +1,43 @@
-.userPhoto {
-   width: 100px;
-   height: 100px;
+.userPhotos {
+    width: 120px;
+    height: 120px;
 }
 
+.userInfoBlock {
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(197, 197, 197);
+    width: 200px;
+    text-align: center;
+    margin-bottom: 6px;
+    font-size: 17px;
+    display: inline-block;
+    color: #607d8b;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.unfollow {
+   margin: 10px 0 0 0;
+   padding: 2px 15px;
+   outline: none;
+   font-weight: 400;
+   font-size: 16px;
+   color: #fff;
+   background: red;
+   border: 1px solid red;
+   letter-spacing: 1px;
+   cursor: pointer;
+}
+
+.follow {
+   margin: 10px 0 0 0;
+   padding: 2px 15px;
+   outline: none;
+   font-weight: 400;
+   font-size: 16px;
+   color: #fff;
+   background: #3970b8;
+   border: 1px solid #3970b8;
+   letter-spacing: 1px;
+   cursor: pointer;
+}

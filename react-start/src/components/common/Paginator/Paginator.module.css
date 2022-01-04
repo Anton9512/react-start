@@ -1,21 +1,32 @@
 .pageBlock {
-    cursor: pointer;
     margin: 0 0 15px 0;
     display: flex;
 }
 
 .pageBlock button {
-    font-size: 18px;
+    padding: 2px 15px;
+    outline: none;
+    font-weight: 400;
+    font-size: 16px;
+    color: #f7f7f7;
+    background: #3970b8;
+    border: 1px solid #3970b8;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
     margin: 0 3px;
 }
 
 .pageNumber span {
-    padding: 2px;
-    font-size: 18px;
-    border: 1px solid grey;
+    cursor: pointer;
+    color: #3970b8;
+    padding: 4px;
+    font-size: 20px;
+    border: 1px solid #3970b8;
 }
 
 .pageNumber .selectedPage {
-    font-weight: bold;
-    border-color: black;
+    font-weight: 900;
+    border: 1.4px solid #3970b8;
+    color: #3970b8;
 }
