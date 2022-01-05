@@ -1,0 +1,16 @@
+Index: src/components/Profile/MyPosts/Post/Post.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.item,\r\nspan {\r\n  padding: 10px;\r\n}\r\n .item img {\r\n   display: block;\r\n   width: 40px;\r\n   height: 40px;\r\n }\r\n\r\n
+===================================================================
+--- src/components/Profile/MyPosts/Post/Post.css	(revision 09e975994104dd4bebfae083eda0005ff0b316f1)
++++ src/components/Profile/MyPosts/Post/Post.css	(date 1641302953921)
+@@ -1,7 +1,4 @@
+-.item,
+-span {
+-  padding: 10px;
+-}
++
+  .item img {
+    display: block;
+    width: 40px;

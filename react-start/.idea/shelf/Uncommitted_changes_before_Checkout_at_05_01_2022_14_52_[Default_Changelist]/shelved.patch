@@ -1,0 +1,226 @@
+Index: src/components/Users/Users.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport styles from './Users.module.css';\r\nimport * as axios from 'axios';\r\nimport userPhoto from '../../images/user.png'\r\n\r\nclass Users extends React.Component {\r\n\r\n   constructor(props) {\r\n      super(props);\r\n         axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {\r\n            this.props.setUsers(response.data.items);\r\n         });\r\n   };\r\n   render() {\r\n      return <div> \r\n     {\r\n         this.props.users.map( (u) => <div key={u.id}>\r\n             <div className={styles.firstBlock}>\r\n                <div><img src={u.photos.small || userPhoto} className={styles.userPhoto} alt=\"\" /></div>\r\n                <div>\r\n                   {u.followed \r\n                   ? <button onClick={ () => {this.props.unfollow(u.id)}}>Follow</button> \r\n                   : <button onClick={ () => {this.props.follow(u.id)}}>Unfollow</button>}\r\n                </div>\r\n             </div>\r\n             <div className={styles.secondBlock}>\r\n                <div>\r\n                   <div>{u.name}</div>\r\n                   <div>{u.status}</div>\r\n                </div>\r\n                <div>\r\n                   <div>{'u.location.country'}</div>\r\n                   <div>{'u.location.city'}</div>\r\n                </div>\r\n             </div>\r\n          </div>\r\n       )}\r\n    </div>\r\n   }\r\n}\r\n\r\nexport default Users;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/components/Users/Users.jsx	(revision 09e975994104dd4bebfae083eda0005ff0b316f1)
++++ src/components/Users/Users.jsx	(date 1641304576587)
+@@ -5,14 +5,33 @@
+ 
+ class Users extends React.Component {
+ 
+-   constructor(props) {
+-      super(props);
+-         axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+-            this.props.setUsers(response.data.items);
+-         });
+-   };
++   componentDidMount() {
++      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
++         this.props.setUsers(response.data.items);
++         this.props.setTotalUsersCount(response.data.totalCount)
++      });
++   }
++
++   onPageChanged = (pageNumber) => {
++      this.props.setCurrentPage(pageNumber)
++      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`).then(response => {
++         this.props.setUsers(response.data.items);
++      });
++   }
++
+    render() {
+-      return <div> 
++      const pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
++      const pages = [];
++      for (let i = 1; i < pagesCount; i++) {
++         if (pages.length < 50) {
++            pages.push(i)
++         }
++      }
++
++      return <div>
++         { pages.map((p) => {
++            return <span className={this.props.currentPage === p && styles.selectedPage} onClick={() => {this.onPageChanged(p)}}>{p}</span>
++         })}
+      {
+          this.props.users.map( (u) => <div key={u.id}>
+              <div className={styles.firstBlock}>
+Index: src/redux/users-reducer.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>const FOLLOW = 'FOLLOW';\r\nconst UNFOLLOW = 'UNFOLLOW';\r\nconst SET_USERS = 'SET-USERS';\r\n\r\n\r\nlet initialState = {\r\n   users: [ ],\r\n};\r\n\r\nconst usersReducer = (state = initialState, action) => {\r\n   switch (action.type) {\r\n      case FOLLOW:\r\n        return { \r\n           ...state,\r\n           users: state.users.map( (u) => {\r\n              if (u.id === action.userId) {\r\n                 return {...u, followed: true}\r\n              }\r\n              return u;\r\n            })\r\n         };\r\n      case UNFOLLOW:\r\n         return { \r\n            ...state,\r\n            users: state.users.map( (u) => {\r\n               if (u.id === action.userId) {\r\n                  return {...u, followed: false}\r\n               }\r\n               return u;\r\n            })\r\n         };\r\n      case SET_USERS: \r\n         return {...state, users: [...state.users, ...action.users]};\r\n      default:\r\n      return state;\r\n   }\r\n};\r\n\r\nexport const followActionCreator = (userId) => ({ type: FOLLOW, userId}) //userId чтобы знать кого фоловим\r\nexport const unfollowActionCreator = (userId) => ({ type: UNFOLLOW, userId})\r\nexport const setUsersActionCreator = (users) => ({ type: SET_USERS, users})\r\n\r\n\r\nexport default usersReducer;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/redux/users-reducer.js	(revision 09e975994104dd4bebfae083eda0005ff0b316f1)
++++ src/redux/users-reducer.js	(date 1641304519494)
+@@ -1,10 +1,15 @@
+ const FOLLOW = 'FOLLOW';
+ const UNFOLLOW = 'UNFOLLOW';
+ const SET_USERS = 'SET-USERS';
++const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
++const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
+ 
+ 
+ let initialState = {
+    users: [ ],
++   totalUsersCount: 0,
++   pageSize: 5,
++   currentPage: 1,
+ };
+ 
+ const usersReducer = (state = initialState, action) => {
+@@ -30,7 +35,11 @@
+             })
+          };
+       case SET_USERS: 
+-         return {...state, users: [...state.users, ...action.users]};
++         return {...state, users: action.users};
++      case SET_CURRENT_PAGE:
++         return {...state, currentPage: action.currentPage}
++      case SET_TOTAL_USERS_COUNT:
++         return {...state, totalUsersCount: action.totalUsersCount}
+       default:
+       return state;
+    }
+@@ -39,6 +48,8 @@
+ export const followActionCreator = (userId) => ({ type: FOLLOW, userId}) //userId чтобы знать кого фоловим
+ export const unfollowActionCreator = (userId) => ({ type: UNFOLLOW, userId})
+ export const setUsersActionCreator = (users) => ({ type: SET_USERS, users})
++export const setCurrentPageAC = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage})
++export const setTotalUsersCountAC = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, totalUsersCount})
+ 
+ 
+ export default usersReducer;
+\ No newline at end of file
+Index: src/components/Users/UsersContainer.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Users from './Users'\r\nimport { connect } from 'react-redux'\r\nimport { followActionCreator, setUsersActionCreator, unfollowActionCreator } from \"../../redux/users-reducer\";\r\n\r\n\r\nconst mapStateToProps = (state) => {\r\n   return {\r\n      users: state.usersPage.users,\r\n   }\r\n}\r\n\r\nconst mapDispatchToProps = (dispatch) => {\r\n   return {\r\n      follow: (userId) => {\r\n         dispatch(followActionCreator(userId))\r\n      },\r\n      unfollow: (userId) => {\r\n         dispatch(unfollowActionCreator(userId))\r\n      },\r\n      setUsers: (users) => {\r\n         dispatch(setUsersActionCreator(users))\r\n      },\r\n   }\r\n}\r\n\r\nexport default connect(mapStateToProps, mapDispatchToProps) (Users)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/components/Users/UsersContainer.jsx	(revision 09e975994104dd4bebfae083eda0005ff0b316f1)
++++ src/components/Users/UsersContainer.jsx	(date 1641304536389)
+@@ -1,11 +1,19 @@
+ import Users from './Users'
+ import { connect } from 'react-redux'
+-import { followActionCreator, setUsersActionCreator, unfollowActionCreator } from "../../redux/users-reducer";
++import {
++   followActionCreator,
++   setCurrentPageAC, setTotalUsersCountAC,
++   setUsersActionCreator,
++   unfollowActionCreator
++} from "../../redux/users-reducer";
+ 
+ 
+ const mapStateToProps = (state) => {
+    return {
+       users: state.usersPage.users,
++      totalUsersCount: state.usersPage.totalUsersCount,
++      pageSize: state.usersPage.pageSize,
++      currentPage: state.usersPage.currentPage,
+    }
+ }
+ 
+@@ -20,6 +28,12 @@
+       setUsers: (users) => {
+          dispatch(setUsersActionCreator(users))
+       },
++      setCurrentPage: (pageNumber) => {
++         dispatch(setCurrentPageAC(pageNumber))
++      },
++      setTotalUsersCount: (totalUsersCount) => {
++         dispatch(setTotalUsersCountAC(totalUsersCount))
++      }
+    }
+ }
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"2e1fa0c8-0853-4f62-89ad-db687875b552\" name=\"Default Changelist\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/Navbar/Nav.jsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/Navbar/Nav.jsx\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/Users/Users.jsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/Users/Users.jsx\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"hiddenUrls\">\r\n      <set>\r\n        <option value=\"https://github.com/Anton9512/react-start.git\" />\r\n      </set>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1zXZg4Cb0ZgYl08cZK2ZqPcVIxK\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/src/components/Profile/MyPosts\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.keymap\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\ADMIN\\OneDrive\\Рабочий стол\\React-projects\\react-start\\src\\components\\Profile\\MyPosts\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"start\" type=\"js.build_tools.npm\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n      <command value=\"run\" />\r\n      <scripts>\r\n        <script value=\"start\" />\r\n      </scripts>\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"npm.start\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"2e1fa0c8-0853-4f62-89ad-db687875b552\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1634296500806</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1634296500806</updated>\r\n      <workItem from=\"1634296504210\" duration=\"282000\" />\r\n      <workItem from=\"1635236659769\" duration=\"2105000\" />\r\n      <workItem from=\"1635490509764\" duration=\"743000\" />\r\n      <workItem from=\"1635496537450\" duration=\"344000\" />\r\n      <workItem from=\"1635496889951\" duration=\"2151000\" />\r\n      <workItem from=\"1635577232436\" duration=\"412000\" />\r\n      <workItem from=\"1635578296422\" duration=\"1795000\" />\r\n      <workItem from=\"1635580116374\" duration=\"348000\" />\r\n      <workItem from=\"1635580692287\" duration=\"31000\" />\r\n      <workItem from=\"1635673365171\" duration=\"3888000\" />\r\n      <workItem from=\"1636297172063\" duration=\"118000\" />\r\n      <workItem from=\"1636297299292\" duration=\"153000\" />\r\n      <workItem from=\"1636297462476\" duration=\"131000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"2\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.History.Properties\">\r\n    <option name=\"COLUMN_ORDER\">\r\n      <list>\r\n        <option value=\"0\" />\r\n        <option value=\"2\" />\r\n        <option value=\"3\" />\r\n        <option value=\"1\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"995\" y=\"402\" key=\"#Notifications\" timestamp=\"1634296555348\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"995\" y=\"402\" key=\"#Notifications/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1634296555348\" />\r\n    <state x=\"521\" y=\"247\" width=\"1180\" height=\"695\" key=\"DiffContextDialog\" timestamp=\"1635499059249\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"521\" y=\"247\" width=\"1180\" height=\"695\" key=\"DiffContextDialog/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1635499059249\" />\r\n    <state width=\"1330\" height=\"199\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1635678833787\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state width=\"1330\" height=\"199\" key=\"GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1635678833787\" />\r\n    <state width=\"1330\" height=\"199\" key=\"GridCell.Tab.0.center\" timestamp=\"1635678833787\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state width=\"1330\" height=\"199\" key=\"GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1635678833787\" />\r\n    <state width=\"1330\" height=\"199\" key=\"GridCell.Tab.0.left\" timestamp=\"1635678833787\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state width=\"1330\" height=\"199\" key=\"GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1635678833787\" />\r\n    <state width=\"1330\" height=\"199\" key=\"GridCell.Tab.0.right\" timestamp=\"1635678833787\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state width=\"1330\" height=\"199\" key=\"GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1635678833787\" />\r\n    <state x=\"777\" y=\"108\" key=\"SettingsEditor\" timestamp=\"1636297580426\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"777\" y=\"108\" key=\"SettingsEditor/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1636297580426\" />\r\n    <state x=\"1335\" y=\"200\" width=\"585\" height=\"795\" key=\"find.popup\" timestamp=\"1635496774936\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"1335\" y=\"200\" width=\"585\" height=\"795\" key=\"find.popup/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1635496774936\" />\r\n    <state x=\"834\" y=\"314\" width=\"672\" height=\"678\" key=\"search.everywhere.popup\" timestamp=\"1635497817812\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"834\" y=\"314\" width=\"672\" height=\"678\" key=\"search.everywhere.popup/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1635497817812\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"javascript\">\r\n          <url>file://$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.jsx</url>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 09e975994104dd4bebfae083eda0005ff0b316f1)
++++ .idea/workspace.xml	(date 1641383538498)
+@@ -21,8 +21,11 @@
+   <component name="ChangeListManager">
+     <list default="true" id="2e1fa0c8-0853-4f62-89ad-db687875b552" name="Default Changelist" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Nav.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.css" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.module.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -141,22 +144,22 @@
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+     <state x="521" y="247" width="1180" height="695" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635499059249" />
+-    <state width="1330" height="199" key="GridCell.Tab.0.bottom" timestamp="1635678833787">
++    <state width="1483" height="178" key="GridCell.Tab.0.bottom" timestamp="1641306440297">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+-    <state width="1330" height="199" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635678833787" />
+-    <state width="1330" height="199" key="GridCell.Tab.0.center" timestamp="1635678833787">
++    <state width="1483" height="178" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1641306440297" />
++    <state width="1483" height="178" key="GridCell.Tab.0.center" timestamp="1641306440297">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+-    <state width="1330" height="199" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635678833787" />
+-    <state width="1330" height="199" key="GridCell.Tab.0.left" timestamp="1635678833787">
++    <state width="1483" height="178" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1641306440297" />
++    <state width="1483" height="178" key="GridCell.Tab.0.left" timestamp="1641306440295">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+-    <state width="1330" height="199" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635678833787" />
+-    <state width="1330" height="199" key="GridCell.Tab.0.right" timestamp="1635678833787">
++    <state width="1483" height="178" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1641306440295" />
++    <state width="1483" height="178" key="GridCell.Tab.0.right" timestamp="1641306440297">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+-    <state width="1330" height="199" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635678833787" />
++    <state width="1483" height="178" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1641306440297" />
+     <state x="777" y="108" key="SettingsEditor" timestamp="1636297580426">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+@@ -165,10 +168,10 @@
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+     <state x="1335" y="200" width="585" height="795" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1635496774936" />
+-    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup" timestamp="1635497817812">
++    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup" timestamp="1641304431278">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+-    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1635497817812" />
++    <state x="834" y="314" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1641304431278" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+Index: src/components/Users/Users.module.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.userPhoto {\r\n   width: 100px;\r\n   height: 100px;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/components/Users/Users.module.css	(revision 09e975994104dd4bebfae083eda0005ff0b316f1)
++++ src/components/Users/Users.module.css	(date 1641302943508)
+@@ -1,4 +1,8 @@
+ .userPhoto {
+    width: 100px;
+    height: 100px;
++}
++
++.selectedPage {
++   font-weight: bold;
+ }
+\ No newline at end of file

@@ -29,7 +29,6 @@ const profileReducer = (state = initialState, action) => {
          return  {
             ...state,
             postData: [...state.postData, newPost],
-            // postData: [...state.postData, newPost],
             newPostText: '',
          };
       case SET_STATUS: 

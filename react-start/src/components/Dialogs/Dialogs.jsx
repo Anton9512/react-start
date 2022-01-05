@@ -20,6 +20,7 @@ class Dialogs extends React.Component {
 
    let addNewMessage = (values) => {
       this.props.sendMessage(values.newMessageBody);
+       values.newMessageBody = '';
    };
 
 

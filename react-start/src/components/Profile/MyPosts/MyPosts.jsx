@@ -1,16 +1,18 @@
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {Textarea} from '../../common/FormsControls/FormsControls';
 
 function MyPosts(props) {
+
     let postsElements = props.postData.map((p) => {
         return <Post key={p.id} message={p.message} likeCount={p.likesCount}/>
     })
 
     let onAddPost = (values) => {
         props.addPost(values.newPostText);
+        values.newPostText = '';
     }
     return (
         <div>
@@ -44,40 +46,4 @@ let AddNewPostFormRedux = reduxForm({form: 'ProfileAddNewPostForm'}) (AddNewPost
 
 export default MyPosts;
 
-
-
-
-
-
-// const MyPosts = (props) => {
-//  let postsElements = props.postData.map((p) => {
-//    return <Post message={p.message} likeCount={p.likesCount}/>
-//  })
-
-//  let newPostElement = React.createRef();
-
-//  let onAddPost = () => {
-//     props.addPost()
-//  }
-
-//  let onPostChange = () => {
-//    let text = newPostElement.current.value;
-//    props.updateNewPostText(text);
-//  };
-
-//    return (
-//       <div>
-//         <div className={s.mypost}>
-//           <div className={s.mypost__btns}>
-//             <div className={s.mypost__logo}>My post</div>
-//             <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} cols="38" rows="6"></textarea>
-//             <div><button onClick={ onAddPost }>Add post</button></div>
-//           </div>
-//           <div className={s.posts}>
-//             {postsElements}
-//           </div>
-//       </div>
-//       </div>
-//   )
-// };
 
