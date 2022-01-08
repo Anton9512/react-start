@@ -1,0 +1,22 @@
+Index: src/components/common/Paginator/Paginator.module.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.pageBlock {\r\n    margin: 0 0 15px 0;\r\n    display: flex;\r\n}\r\n\r\n.pageBlock button {\r\n    cursor: pointer;\r\n    padding: 2px 15px;\r\n    outline: none;\r\n    font-weight: 400;\r\n    font-size: 16px;\r\n    color: #f7f7f7;\r\n    background: #3970b8;\r\n    border: 1px solid #3970b8;\r\n    font-size: 16px;\r\n    letter-spacing: 1px;\r\n    margin: 0 3px;\r\n}\r\n\r\n.pageNumber span {\r\n    color: #3970b8;\r\n    padding: 4px;\r\n    font-size: 20px;\r\n    border: 1px solid #3970b8;\r\n}\r\n\r\n.pageNumber .selectedPage {\r\n    font-weight: 900;\r\n    border: 1.4px solid #3970b8;\r\n    color: #3970b8;\r\n}
+===================================================================
+--- src/components/common/Paginator/Paginator.module.css	(revision c56bb5acdb61a6672e77d8c5fb66b44dba97881a)
++++ src/components/common/Paginator/Paginator.module.css	(date 1641631420684)
+@@ -22,6 +22,7 @@
+     padding: 4px;
+     font-size: 20px;
+     border: 1px solid #3970b8;
++    cursor: pointer;
+ }
+ 
+ .pageNumber .selectedPage {
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_05_01_2022_14_52__Default_Changelist_1.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_05_01_2022_14_52__Default_Changelist_1.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_19_12_2021_14_35__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_19_12_2021_14_35__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2022_11_11__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2022_11_11__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_18_12_2021_13_19__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_18_12_2021_13_19__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_05_01_2022_14_52__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_05_01_2022_14_52__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_19_12_2021_14_20__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_19_12_2021_14_20__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2022_11_11__Default_Changelist_1.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2022_11_11__Default_Changelist_1.xml
