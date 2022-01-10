@@ -5,6 +5,10 @@
    margin: 0 0 20px 0;
 }
 
+.mypost__btns textarea {
+   outline: none;
+}
+
 .mypost__logo {
    font-size: 20px;
    color: #607d8b;

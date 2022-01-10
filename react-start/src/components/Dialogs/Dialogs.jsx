@@ -8,9 +8,6 @@ import { Textarea } from '../common/FormsControls/FormsControls';
 import { maxLengthCreator} from '../../utils/validators/validators';
 
 class Dialogs extends React.Component {
-   constructor(props){
-      super(props)
-   };
    render() {
    
    let state = this.props.dialogsPage;
@@ -42,12 +39,10 @@ class Dialogs extends React.Component {
    }
 }
 
-const maxLength50 = maxLengthCreator(50)
-
 const AddMessageForm = (props) => {
    return  (
-      <form onSubmit={ props.handleSubmit } className={s.entermessage}>
-         <div>
+      <form onSubmit={ props.handleSubmit }>
+         <div className={s.entermessage}>
             <Field component={Textarea} name={'newMessageBody'} placeholder='Enter your message...'/>
          </div>
          <div>
@@ -56,6 +51,6 @@ const AddMessageForm = (props) => {
       </form>)
 }
 
-const AddMessageFormRedux = reduxForm({form: 'dialo-add-message-form'}) (AddMessageForm);
+const AddMessageFormRedux = reduxForm({form: 'dialog-add-message-form'}) (AddMessageForm);
 
 export default Dialogs;

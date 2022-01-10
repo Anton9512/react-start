@@ -18,6 +18,7 @@
 }
 
 .pageNumber span {
+    cursor: pointer;
     color: #3970b8;
     padding: 4px;
     font-size: 20px;

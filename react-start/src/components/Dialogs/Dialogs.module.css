@@ -30,4 +30,7 @@
    border: 1px solid #3970b8;
 }
 
+.entermessage textarea{
+   outline: none;
+}
 
