@@ -9,8 +9,6 @@
     margin: 0 20px 0 0;
 }
 
-
-
 .profileDataForItem div {
     margin: 0 0 10px 0;
 }
@@ -32,4 +30,8 @@
     color: #fff;
     background: #3970b8;
     border: 1px solid #3970b8;
+}
+
+.contactKey {
+    font-weight: 600;
 }

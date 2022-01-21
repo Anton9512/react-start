@@ -12,16 +12,16 @@ const ProfileDataForm = ({handleSubmit, profile, error}) => {
             {error}
         </div>}
         <div className={styles.profileDataForItem}>
-            <div><span>Full name</span>:<Field placeholder={'Full name'} name={'fullName'} component={Input}/></div>
-            <div><span>Looking for a job</span>:<Field name={'lookingForAJob'} component={Input} type={'checkbox'}/></div>
-            <div><span>My professional skills</span>:<Field placeholder={'My professional skills'} name={'lookingForAJobDescription'} component={Textarea}/></div>
-            <div><span>About me </span>:<Field name={'aboutMe'} component={Textarea}/></div>
+            <div><b>Full name</b>:<Field placeholder={'Full name'} name={'fullName'} component={Input}/></div>
+            <div><b>Looking for a job</b>:<Field name={'lookingForAJob'} component={Input} type={'checkbox'}/></div>
+            <div><b>My professional skills</b>:<Field placeholder={'My professional skills'} name={'lookingForAJobDescription'} component={Textarea}/></div>
+            <div><b>About me </b>:<Field name={'aboutMe'} component={Textarea}/></div>
             <div><button>save</button></div>
         </div>
         <div className={styles.profileDataFormContacts}>
-            <div className={styles.profileDataForItem}><span>Contacts </span>: {Object.keys(profile.contacts).map(key => {
+            <div className={styles.profileDataForItem}><b>Contacts </b>: {Object.keys(profile.contacts).map(key => {
                 return <div key={key} className={s.contact}>
-                    <b>{key}:<Field placeholder={key} name={'contacts.' + key } component={Input}/></b>
+                    <span className={styles.contactKey}>{key}:<Field name={'contacts.' + key } component={Input}/></span>
                 </div>
             })}</div>
         </div>
